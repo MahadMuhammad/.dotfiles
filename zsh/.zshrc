@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Alias Here:
-alias up="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean && sudo apt purge && brew update && brew upgrade && brew cleanup && omz update"
+alias up="sudo apt update --fix-missing && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean && sudo apt purge && brew update && brew upgrade && brew cleanup && omz update"
 alias vi=nvim
 alias cdcp="cd /home/mahad/Desktop/algorithms/CP/"
 alias vs="code ."
