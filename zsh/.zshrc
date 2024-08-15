@@ -110,7 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Alias Here:
-alias up="sudo apt update && sudo apt update --fix-missing && sudo apt upgrade -y && sudo snap refresh && sudo apt autoremove -y && sudo apt clean && sudo apt purge && brew update && brew upgrade && brew cleanup && omz update"
+alias up="sudo apt update && sudo apt update --fix-missing && sudo apt upgrade -y && sudo snap refresh && sudo apt autoremove -y && sudo apt clean && sudo apt purge && brew update && brew upgrade && brew cleanup && rustup update && omz update"
 alias vi=nvim
 alias python=python3
 alias cdcp="cd /home/mahad/Desktop/algorithms/CP/"
@@ -120,3 +120,6 @@ alias getclip="xclip -selection c -o"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+alias g++='g++-14 -I/home/mahad/cplib -DMAHAD_DEBUG -Wall'
+export PATH="$HOME/cplib/utils/gen:$PATH"
+alias gen='gen -o'
