@@ -120,6 +120,6 @@ alias getclip="xclip -selection c -o"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias g++='g++-14 -I/home/mahad/cplib -DMAHAD_DEBUG -Wall'
+alias g++='g++ -std=c++23 -I/home/mahad/cplib -DMAHAD_DEBUG -Wall'
 export PATH="$HOME/cplib/utils/gen:$PATH"
 alias gen='gen -o'
