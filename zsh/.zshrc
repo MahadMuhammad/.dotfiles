@@ -120,6 +120,7 @@ alias getclip="xclip -selection c -o"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias g++='g++ -std=c++23 -I/home/mahad/cplib -DMAHAD_DEBUG -Wall'
+# TODO: need to make a seperate Makefile for C++ Competitive Programming
+alias g++='g++ -std=c++23 -I/home/mahad/cplib -DMAHAD_DEBUG -Wall -Wextra -Wconversion -static -pedantic -Wsign-conversion -Wconversion -D_GLIBCXX_DEBUG'
 export PATH="$HOME/cplib/utils/gen:$PATH"
 alias gen='gen -o'
