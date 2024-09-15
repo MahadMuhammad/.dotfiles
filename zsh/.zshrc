@@ -113,7 +113,8 @@ source $ZSH/oh-my-zsh.sh
 alias up="sudo apt update && sudo apt update --fix-missing && sudo apt upgrade -y && sudo snap refresh && sudo apt autoremove -y && sudo apt clean && sudo apt purge && brew update && brew upgrade && brew cleanup && rustup update && omz update"
 alias vi=nvim
 alias python=python3
-alias cdcp="cd /home/mahad/Desktop/algorithms/CP/"
+export CP_PATH="~/Desktop/algorithms/CP"
+alias cdcp="cd $CP_PATH"
 alias vs="code ."
 alias setclip="xclip -selection c"
 alias getclip="xclip -selection c -o"
