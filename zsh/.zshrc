@@ -110,7 +110,37 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Alias Here:
-alias up="sudo apt update && sudo apt update --fix-missing && sudo apt upgrade -y && sudo snap refresh && sudo apt autoremove -y && sudo apt clean && sudo apt purge && brew update && brew upgrade && brew cleanup && rustup update && omz update"
+function update_system() {
+    # APT updates
+    sudo apt update && \
+    sudo apt update --fix-missing && \
+    sudo apt upgrade -y && \
+    
+    # Snap updates and cleanup
+    sudo snap refresh && \
+    # Remove old snap versions
+    local snapsToRemove=$(LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $2, $3}')
+    while read snapname version revision; do
+        if [[ "$revision" == *[a-zA-z]* ]]; then
+            revision=$version
+        fi
+        sudo snap remove "$snapname" --revision="$revision"
+    done <<< "$snapsToRemove"
+    
+    # System cleanup
+    sudo apt autoremove -y && \
+    sudo apt clean && \
+    sudo apt purge && \
+    
+    # Other package managers
+    brew update && \
+    brew upgrade && \
+    brew cleanup && \
+    rustup update && \
+    omz update
+}
+
+alias up='update_system'
 alias vi=nvim
 alias python=python3
 export CP_PATH="~/Desktop/algorithms/CP"
